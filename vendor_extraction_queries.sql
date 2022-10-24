@@ -171,7 +171,6 @@ SELECT
     a.voucher_dh_local / a.exchange_rate AS voucher_dh_eur,	
     a.voucher_other_local / a.exchange_rate AS voucher_other_eur,
 FROM `fulfillment-dwh-production.cl.dps_sessions_mapped_to_orders_v2` a
-LEFT JOIN `fulfillment-dwh-production.cl.dps_ab_test_orders_v2` b ON a.entity_id = b.entity_id AND a.platform_order_code = b.platform_order_code
 LEFT JOIN `fulfillment-dwh-production.curated_data_shared_central_dwh.orders` dwh 
   ON TRUE 
     AND a.entity_id = dwh.global_entity_id
